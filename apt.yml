@@ -1,0 +1,19 @@
+- hosts: local
+  connection: local
+  become: yes
+  tasks:
+    - name: Install apt packages
+      apt: name={{item}} state=installed
+      with_items:
+        - curl
+        - vim
+        - tig
+        - qt5-default
+        - libqt5webkit5-dev
+        - gstreamer1.0-plugins-base
+        - gstreamer1.0-tools
+        - gstreamer1.0-x
+        - xvfb
+        - libmagick++-dev 
+        - redis-server
+
