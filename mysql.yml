@@ -1,0 +1,13 @@
+- hosts: local
+  connection: local
+  roles:
+    - role: geerlingguy.mysql
+      become: yes
+      mysql_user_home: '/home/{{ ansible_user }}'
+      mysql_enabled_on_startup: yes
+      mysql_databases:
+        - name: inprofit_development
+        - name: inprofit_test
+      mysql_users:
+        - name: inprofit_development
+          password: inprofit
